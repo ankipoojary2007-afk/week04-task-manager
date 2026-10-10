@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="app">
+        <header class="header">
+            <p class="eyebrow">WEEK 04 • WEB DEVELOPMENT</p>
+            <h1>My Task Manager <span>✦</span></h1>
+            <p class="subtitle">Organize your day, one task at a time.</p>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span class="stat-icon">◷</span>
+                <div>
+                    <p class="stat-label">Pending tasks</p>
+                    <h2 id="pendingCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">✓</span>
+                <div>
+                    <p class="stat-label">Total tasks</p>
+                    <h2 id="totalCount">0</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="task-section">
+            <h2 class="section-title">Add a new task</h2>
+
+            <form id="taskForm" class="task-form">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                    maxlength="120"
+                    aria-label="Enter a task"
+                    autocomplete="off"
+                >
+                <button type="submit" class="add-btn">+ Add Task</button>
+            </form>
+
+            <h2 class="section-title list-heading">Your tasks</h2>
+
+            <div class="filters" aria-label="Filter tasks">
+                <button type="button" class="filter-btn active"
+                    data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="filter-btn"
+                    data-filter="pending" aria-pressed="false">Pending</button>
+                <button type="button" class="filter-btn"
+                    data-filter="completed" aria-pressed="false">Completed</button>
+            </div>
+
+            <p id="emptyState" class="empty-state">
+                No tasks yet. Add your first task above!
+            </p>
+
+            <ul id="taskList" class="task-list" aria-live="polite"></ul>
+        </section>
+
+        <footer class="footer">
+            <p>Small steps every day make a big difference ✨</p>
+        </footer>
+    </main>
+
+</body>
+</html>
